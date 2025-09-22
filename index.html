@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        html { scroll-behavior: smooth; }
+        /* Fade-in ao scroll */
         .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
         .fade-in.show { opacity: 1; transform: translateY(0); }
+
+        /* Contadores */
         .counter { font-weight: bold; font-size: 2rem; }
+
+        /* Tooltip */
         .tooltip { position: relative; display: inline-block; cursor: pointer; }
         .tooltip .tooltiptext { 
             visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center;
@@ -18,15 +22,20 @@
             bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;
         }
         .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+
+        /* Barra de progresso */
         .progress-bg { background: #ddd; border-radius: 10px; overflow: hidden; }
         .progress-bar { height: 20px; background-color: #ef4444; width: 0; transition: width 1.5s ease-in-out; }
+
+        /* Ondas animadas no header */
         .wave { position: absolute; width: 200%; height: 100%; top: -50px; left: -50%; background: url('https://i.ibb.co/zZ1kQFh/wave.png') repeat-x; background-size: cover; animation: waveMove 10s linear infinite; opacity:0.3; }
         @keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 1000px; } }
     </style>
 </head>
-<body class="bg-blue-50 text-gray-800 font-sans relative">
+<body class="bg-blue-50 text-gray-800 font-sans relative dark:bg-blue-900 dark:text-white">
 
-<header class="bg-blue-700 text-white py-16 text-center relative overflow-hidden">
+<!-- Header -->
+<header class="bg-blue-700 text-white py-16 text-center relative overflow-hidden dark:bg-blue-800">
     <div class="wave"></div>
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Salve os Oceanos</h1>
     <p class="text-lg md:text-2xl">O plástico nos mares está destruindo a vida marinha. Faça a diferença!</p>
@@ -34,22 +43,23 @@
     <button id="theme-toggle" class="absolute top-4 right-4 bg-white text-blue-700 px-3 py-1 rounded">Modo Escuro</button>
 </header>
 
+<!-- Estatísticas -->
 <section class="py-16 text-center">
     <h2 class="text-3xl font-bold mb-12">O Impacto do Plástico</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip">
+        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip dark:bg-blue-700">
             <div class="counter" data-target="8000000">0</div>
             <p>Toneladas de plástico nos mares por ano</p>
             <span class="tooltiptext">Estimativa da ONU sobre resíduos plásticos nos oceanos</span>
             <div class="progress-bg mt-4"><div class="progress-bar" data-target="100"></div></div>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip">
+        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip dark:bg-blue-700">
             <div class="counter" data-target="100000">0</div>
             <p>Animais marinhos mortos anualmente</p>
             <span class="tooltiptext">Mortes devido a ingestão ou emaranhamento no plástico</span>
             <div class="progress-bg mt-4"><div class="progress-bar" data-target="80"></div></div>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip">
+        <div class="bg-white p-8 rounded-xl shadow-lg fade-in tooltip dark:bg-blue-700">
             <div class="counter" data-target="40">0</div>
             <p>% do plástico descartado que vai para o oceano</p>
             <span class="tooltiptext">Apenas 40% do plástico é reciclado corretamente</span>
@@ -58,24 +68,26 @@
     </div>
 </section>
 
-<section class="py-16 bg-blue-100 text-center">
+<!-- Gráfico Chart.js -->
+<section class="py-16 bg-blue-100 text-center dark:bg-blue-800">
     <h2 class="text-3xl font-bold mb-8">Distribuição do Plástico nos Oceanos</h2>
     <canvas id="plasticChart" class="max-w-3xl mx-auto"></canvas>
 </section>
 
+<!-- Seção educativa -->
 <section class="py-16">
     <div class="max-w-6xl mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-8">Como podemos ajudar</h2>
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in dark:bg-blue-700">
                 <h3 class="text-xl font-semibold mb-2">Reduza o uso de plástico</h3>
                 <p>Evite sacolas, canudos e utensílios descartáveis.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in dark:bg-blue-700">
                 <h3 class="text-xl font-semibold mb-2">Recicle corretamente</h3>
                 <p>Separe os resíduos plásticos e encaminhe para reciclagem.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:scale-105 transition transform fade-in dark:bg-blue-700">
                 <h3 class="text-xl font-semibold mb-2">Participe de campanhas</h3>
                 <p>Ajude projetos que limpam praias e conscientizam pessoas.</p>
             </div>
@@ -83,42 +95,37 @@
     </div>
 </section>
 
-<section id="videos" class="py-16 bg-blue-100 text-center">
-    <h2 class="text-3xl font-bold mb-8">Vídeos sobre a poluição plástica</h2>
-    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-        <div class="fade-in">
-            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Vídeo 1" frameborder="0" allowfullscreen></iframe>
-            <p class="mt-2 font-semibold">Como o plástico afeta os oceanos</p>
-        </div>
-        <div class="fade-in">
-            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Vídeo 2" frameborder="0" allowfullscreen></iframe>
-            <p class="mt-2 font-semibold">Projetos de limpeza de praias</p>
-        </div>
-        <div class="fade-in">
-            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_3" title="Vídeo 3" frameborder="0" allowfullscreen></iframe>
-            <p class="mt-2 font-semibold">Como reciclar corretamente</p>
-        </div>
+<!-- Seção vídeos -->
+<section class="py-16 bg-blue-50 text-center dark:bg-blue-900">
+    <h2 class="text-3xl font-bold mb-8">Vídeos Educativos</h2>
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+        <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID1" title="Vídeo 1" frameborder="0" allowfullscreen></iframe>
+        <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID2" title="Vídeo 2" frameborder="0" allowfullscreen></iframe>
+        <iframe class="w-full h-64 rounded-lg shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID3" title="Vídeo 3" frameborder="0" allowfullscreen></iframe>
     </div>
 </section>
 
-<section class="py-16 bg-blue-50 text-center">
+<!-- Depoimentos -->
+<section class="py-16 bg-blue-50 text-center dark:bg-blue-900">
     <h2 class="text-3xl font-bold mb-8">Depoimentos</h2>
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
-        <div class="bg-white p-6 rounded-xl shadow-lg fade-in">“Precisamos agir agora para salvar a vida marinha.” – Marina Silva</div>
-        <div class="bg-white p-6 rounded-xl shadow-lg fade-in">“Reduzir o plástico é responsabilidade de todos.” – WWF Brasil</div>
-        <div class="bg-white p-6 rounded-xl shadow-lg fade-in">“Cada pequena ação conta para o futuro dos oceanos.” – Greenpeace</div>
+        <div class="bg-white p-6 rounded-xl shadow-lg fade-in dark:bg-blue-700">“Precisamos agir agora para salvar a vida marinha.” – Marina Silva</div>
+        <div class="bg-white p-6 rounded-xl shadow-lg fade-in dark:bg-blue-700">“Reduzir o plástico é responsabilidade de todos.” – WWF Brasil</div>
+        <div class="bg-white p-6 rounded-xl shadow-lg fade-in dark:bg-blue-700">“Cada pequena ação conta para o futuro dos oceanos.” – Greenpeace</div>
     </div>
 </section>
 
+<!-- Call to Action -->
 <section id="acao" class="py-16 text-center">
     <h2 class="text-3xl font-bold mb-6">Junte-se à causa</h2>
     <p class="mb-6">Compartilhe esta informação e ajude a reduzir o plástico nos oceanos.</p>
-    <a href="#videos" class="bg-blue-700 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 mb-4 inline-block">Compartilhar</a>
+    <a href="#" class="bg-blue-700 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 mb-4 inline-block">Compartilhar</a>
     <p class="mb-2">Campanha termina em:</p>
     <div id="countdown" class="text-2xl font-bold"></div>
 </section>
 
-<footer class="bg-blue-700 text-white py-8 text-center">
+<!-- Rodapé -->
+<footer class="bg-blue-700 text-white py-8 text-center dark:bg-blue-800">
     <p class="mb-2">© 2025 Salve os Oceanos</p>
     <div class="flex justify-center gap-4">
         <a href="#" class="hover:text-yellow-400 transition">Instagram</a>
@@ -128,6 +135,6 @@
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
+
