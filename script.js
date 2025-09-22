@@ -1,7 +1,7 @@
 // === FADE-IN AO SCROLL ===
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = { threshold: 0.2 };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
+const appearOnScroll = new IntersectionObserver((entries, observer)=>{
     entries.forEach(entry => {
         if(entry.isIntersecting){
             entry.target.classList.add('show');
@@ -45,38 +45,28 @@ new Chart(ctx, {
     },
     options: { 
         responsive:true, 
-        plugins:{ 
-            legend:{ position:'bottom', labels:{ color: '#000', font:{ size:14 } } } 
-        } 
+        plugins:{ legend:{ position:'bottom', labels:{ color: '#000', font:{ size:14 } } } } 
     }
 });
 
 // === LIGHT/DARK MODE ===
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
-    document.documentElement.classList.toggle('dark'); // Ativa Tailwind dark:
-    const isDark = document.documentElement.classList.contains('dark');
-    themeBtn.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
+    document.documentElement.classList.toggle('dark');
+    themeBtn.textContent = document.documentElement.classList.contains('dark') ? 'Modo Claro' : 'Modo Escuro';
 });
 
 // === CONTAGEM REGRESSIVA ===
 const countdown = document.getElementById('countdown');
 const campaignEnd = new Date("Dec 31, 2025 23:59:59").getTime();
-
 const updateCountdown = () => {
     const now = new Date().getTime();
     const distance = campaignEnd - now;
-
-    if(distance < 0){
-        countdown.innerHTML = "Campanha encerrada!";
-        return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    if(distance < 0){ countdown.innerHTML = "Campanha encerrada!"; return; }
+    const days = Math.floor(distance / (1000*60*60*24));
+    const hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+    const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+    const seconds = Math.floor((distance % (1000*60)) / 1000);
     countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
 updateCountdown();
