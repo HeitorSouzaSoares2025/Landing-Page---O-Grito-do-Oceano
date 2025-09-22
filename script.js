@@ -1,6 +1,6 @@
-console.log("🌊 Landing Page com Parallax carregada!");
+console.log("🌊 Landing Page carregada!");
 
-// Scroll suave
+// Scroll suave para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener("click", function(e) {
     e.preventDefault();
@@ -10,20 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Botão Voltar ao Topo
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 400) {
-    backToTop.classList.remove("hidden");
-  } else {
-    backToTop.classList.add("hidden");
-  }
-});
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Parallax de elementos (camadas que seguem o mouse)
+// Parallax interativo (peixes seguem o mouse)
 document.addEventListener("mousemove", e => {
   document.querySelectorAll(".parallax-layer").forEach(layer => {
     const speed = layer.getAttribute("data-speed");
@@ -31,4 +18,20 @@ document.addEventListener("mousemove", e => {
     const y = (window.innerHeight - e.pageY * speed) / 100;
     layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
+});
+
+// Parallax nos vídeos (scroll)
+window.addEventListener("scroll", () => {
+  document.querySelectorAll(".video-parallax").forEach((video, index) => {
+    let speed = (index + 1) * 0.3;
+    let offset = window.scrollY * speed / 10;
+    video.style.transform = `translateY(${offset}px)`;
+  });
+});
+
+// Cursor customizado (bolha azul)
+const cursor = document.getElementById("custom-cursor");
+document.addEventListener("mousemove", e => {
+  cursor.style.top = e.clientY + "px";
+  cursor.style.left = e.clientX + "px";
 });
