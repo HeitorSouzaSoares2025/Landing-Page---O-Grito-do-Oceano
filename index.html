@@ -7,17 +7,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* Scroll suave */
         html { scroll-behavior: smooth; }
-
-        /* Fade-in ao scroll */
         .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
         .fade-in.show { opacity: 1; transform: translateY(0); }
-
-        /* Contadores */
         .counter { font-weight: bold; font-size: 2rem; }
-
-        /* Tooltip */
         .tooltip { position: relative; display: inline-block; cursor: pointer; }
         .tooltip .tooltiptext { 
             visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center;
@@ -25,30 +18,22 @@
             bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;
         }
         .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
-
-        /* Barra de progresso */
         .progress-bg { background: #ddd; border-radius: 10px; overflow: hidden; }
         .progress-bar { height: 20px; background-color: #ef4444; width: 0; transition: width 1.5s ease-in-out; }
-
-        /* Ondas animadas no header */
         .wave { position: absolute; width: 200%; height: 100%; top: -50px; left: -50%; background: url('https://i.ibb.co/zZ1kQFh/wave.png') repeat-x; background-size: cover; animation: waveMove 10s linear infinite; opacity:0.3; }
         @keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 1000px; } }
     </style>
 </head>
 <body class="bg-blue-50 text-gray-800 font-sans relative">
 
-<!-- Header com ondas -->
 <header class="bg-blue-700 text-white py-16 text-center relative overflow-hidden">
     <div class="wave"></div>
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Salve os Oceanos</h1>
     <p class="text-lg md:text-2xl">O plástico nos mares está destruindo a vida marinha. Faça a diferença!</p>
     <a href="#acao" class="mt-6 inline-block bg-yellow-400 text-blue-800 font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition transform hover:-translate-y-1">Saiba como agir</a>
-
-    <!-- Light/Dark mode -->
     <button id="theme-toggle" class="absolute top-4 right-4 bg-white text-blue-700 px-3 py-1 rounded">Modo Escuro</button>
 </header>
 
-<!-- Estatísticas -->
 <section class="py-16 text-center">
     <h2 class="text-3xl font-bold mb-12">O Impacto do Plástico</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
@@ -73,13 +58,11 @@
     </div>
 </section>
 
-<!-- Gráfico Chart.js -->
 <section class="py-16 bg-blue-100 text-center">
     <h2 class="text-3xl font-bold mb-8">Distribuição do Plástico nos Oceanos</h2>
     <canvas id="plasticChart" class="max-w-3xl mx-auto"></canvas>
 </section>
 
-<!-- Seção educativa -->
 <section class="py-16">
     <div class="max-w-6xl mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-8">Como podemos ajudar</h2>
@@ -100,7 +83,24 @@
     </div>
 </section>
 
-<!-- Depoimentos -->
+<section id="videos" class="py-16 bg-blue-100 text-center">
+    <h2 class="text-3xl font-bold mb-8">Vídeos sobre a poluição plástica</h2>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-4">
+        <div class="fade-in">
+            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_1" title="Vídeo 1" frameborder="0" allowfullscreen></iframe>
+            <p class="mt-2 font-semibold">Como o plástico afeta os oceanos</p>
+        </div>
+        <div class="fade-in">
+            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_2" title="Vídeo 2" frameborder="0" allowfullscreen></iframe>
+            <p class="mt-2 font-semibold">Projetos de limpeza de praias</p>
+        </div>
+        <div class="fade-in">
+            <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.youtube.com/embed/VIDEO_ID_3" title="Vídeo 3" frameborder="0" allowfullscreen></iframe>
+            <p class="mt-2 font-semibold">Como reciclar corretamente</p>
+        </div>
+    </div>
+</section>
+
 <section class="py-16 bg-blue-50 text-center">
     <h2 class="text-3xl font-bold mb-8">Depoimentos</h2>
     <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 px-4">
@@ -110,16 +110,14 @@
     </div>
 </section>
 
-<!-- Call to Action com contagem regressiva -->
 <section id="acao" class="py-16 text-center">
     <h2 class="text-3xl font-bold mb-6">Junte-se à causa</h2>
     <p class="mb-6">Compartilhe esta informação e ajude a reduzir o plástico nos oceanos.</p>
-    <a href="#" class="bg-blue-700 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 mb-4 inline-block">Compartilhar</a>
+    <a href="#videos" class="bg-blue-700 text-white font-bold px-8 py-4 rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 mb-4 inline-block">Compartilhar</a>
     <p class="mb-2">Campanha termina em:</p>
     <div id="countdown" class="text-2xl font-bold"></div>
 </section>
 
-<!-- Rodapé -->
 <footer class="bg-blue-700 text-white py-8 text-center">
     <p class="mb-2">© 2025 Salve os Oceanos</p>
     <div class="flex justify-center gap-4">
@@ -129,82 +127,7 @@
     </div>
 </footer>
 
+<script src="script.js"></script>
 
-    <script>
-    // === FADE-IN AO SCROLL ===
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2 };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer){
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('show');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
-
-    // === CONTADORES ANIMADOS ===
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText.replace(/\D/g,'');
-            const increment = target / 200;
-            if(count < target){
-                counter.innerText = Math.ceil(count + increment).toLocaleString();
-                setTimeout(updateCount, 10);
-            } else {
-                counter.innerText = target.toLocaleString();
-            }
-        };
-        updateCount();
-    });
-
-    // === BARRAS DE PROGRESSO ===
-    const bars = document.querySelectorAll('.progress-bar');
-    bars.forEach(bar => {
-        const target = +bar.getAttribute('data-target');
-        setTimeout(()=>{ bar.style.width = target + '%'; }, 500);
-    });
-
-    // === GRÁFICO Chart.js ===
-    const ctx = document.getElementById('plasticChart').getContext('2d');
-    new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Plástico nos oceanos', 'Reciclado', 'Outro lixo'],
-            datasets: [{ data: [40,25,35], backgroundColor: ['#ef4444','#10b981','#3b82f6'] }]
-        },
-        options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
-    });
-
-    // === LIGHT/DARK MODE ===
-    const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.addEventListener('click', () => {
-        document.body.classList.toggle('bg-blue-900');
-        document.body.classList.toggle('text-white');
-        themeBtn.textContent = document.body.classList.contains('bg-blue-900') ? 'Modo Claro' : 'Modo Escuro';
-    });
-
-    // === CONTAGEM REGRESSIVA ===
-    const countdown = document.getElementById('countdown');
-    const campaignEnd = new Date("Dec 31, 2025 23:59:59").getTime();
-
-    setInterval(() => {
-        const now = new Date().getTime();
-        const distance = campaignEnd - now;
-
-        if(distance < 0){
-            countdown.innerHTML = "Campanha encerrada!";
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }, 1000);
-    </script>
+</body>
+</html>
