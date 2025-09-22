@@ -1,23 +1,18 @@
-/* Fade-in ao scroll */
-.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-in-out; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
-
-/* Contadores */
-.counter { font-weight: bold; font-size: 2rem; }
-
-/* Tooltip */
-.tooltip { position: relative; display: inline-block; cursor: pointer; }
-.tooltip .tooltiptext { 
-    visibility: hidden; width: 200px; background-color: #333; color: #fff; text-align: center;
-    border-radius: 6px; padding: 5px 10px; position: absolute; z-index: 1;
-    bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.3s;
+/* Animações extras */
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
-.tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-slide-up { animation: slideUp 1s ease-out forwards; }
+.animate-fade-in { animation: fadeIn 1.5s ease-in forwards; }
 
-/* Barra de progresso */
-.progress-bg { background: #ddd; border-radius: 10px; overflow: hidden; }
-.progress-bar { height: 20px; background-color: #ef4444; width: 0; transition: width 1.5s ease-in-out; }
-
-/* Ondas animadas no header */
-.wave { position: absolute; width: 200%; height: 100%; top: -50px; left: -50%; background: url('imagens/wave.png') repeat-x; background-size: cover; animation: waveMove 10s linear infinite; opacity:0.3; }
-@keyframes waveMove { from { background-position-x: 0; } to { background-position-x: 1000px; } }
+/* Parallax */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
