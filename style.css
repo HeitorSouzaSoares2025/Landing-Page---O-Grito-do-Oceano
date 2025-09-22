@@ -1,12 +1,13 @@
-/* Animações extras */
+/* Animações de entrada */
 @keyframes slideUp {
-  0% { transform: translateY(30px); opacity: 0; }
+  0% { transform: translateY(40px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
 }
 @keyframes fadeIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
 .animate-slide-up { animation: slideUp 1s ease-out forwards; }
 .animate-fade-in { animation: fadeIn 1.5s ease-in forwards; }
 
