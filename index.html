@@ -3,74 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Impacto do Plástico nos Mares</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Impacto do Plástico nos Oceanos</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-gray-900 text-white overflow-x-hidden">
 
-  <!-- Hero com Parallax -->
-  <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
-    <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
-      <source src="https://cdn.coverr.co/videos/coverr-waves-crashing-into-rocks-9344/1080p.mp4" type="video/mp4">
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center bg-black overflow-hidden">
+    <video autoplay loop muted playsinline class="absolute w-full h-full object-cover">
+      <source src="assets/ocean.mp4" type="video/mp4">
     </video>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent"></div>
-
-    <!-- Camadas parallax extras -->
-    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Water_drop_icon.svg"
-         class="parallax-layer absolute top-20 left-10 w-10 opacity-70" data-speed="3">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/8/88/Fish_icon.svg"
-         class="parallax-layer absolute bottom-20 right-16 w-16 opacity-80" data-speed="2">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Turtle_icon.svg"
-         class="parallax-layer absolute top-40 right-28 w-20 opacity-70" data-speed="4">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Bubble_icon.svg"
-         class="parallax-layer absolute bottom-32 left-20 w-8 opacity-60" data-speed="5">
-
-    <div class="relative z-10 max-w-3xl px-4">
-      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 animate-slide-up drop-shadow-xl leading-tight">O Impacto do Plástico nos Mares</h1>
-      <p class="text-xl md:text-2xl mb-8 animate-fade-in leading-relaxed max-w-2xl mx-auto">Descubra como o plástico ameaça a vida marinha e como podemos agir para proteger nossos oceanos.</p>
-      <a href="#impacto" class="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition transform hover:scale-105">Saiba Mais</a>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/90"></div>
+    <div class="relative z-10 text-white px-6">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 title-glow">
+        🌊 O Impacto do Plástico nos Oceanos
+      </h1>
+      <p class="text-lg md:text-2xl max-w-2xl mx-auto text-gray-200">
+        Descubra como o plástico ameaça a vida marinha e o que podemos fazer para mudar esse futuro.
+      </p>
+      <a href="#videos" class="btn inline-block mt-6">Assista Agora</a>
     </div>
+    <!-- Camadas Parallax -->
+    <img src="assets/fish1.png" class="parallax-layer absolute w-32 top-1/4 left-10 opacity-70" data-speed="2" alt="Peixe">
+    <img src="assets/fish2.png" class="parallax-layer absolute w-24 bottom-20 right-12 opacity-60" data-speed="4" alt="Peixe">
   </section>
 
-  <!-- Seção Parallax de transição -->
-  <section class="parallax h-96 flex items-center justify-center text-white text-4xl font-bold text-center px-6"
-           style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
-    🌊 Juntos podemos proteger os oceanos
-  </section>
-
-  <!-- Impacto -->
-  <section id="impacto" class="py-24 bg-gradient-to-r from-blue-100 to-green-100">
+  <!-- Seção de Vídeos -->
+  <section id="videos" class="py-24 bg-white relative overflow-hidden text-gray-900">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-extrabold mb-12 animate-slide-up text-gray-900">O Problema do Plástico</h2>
-      <div class="grid md:grid-cols-3 gap-10">
-        <div class="p-8 bg-white rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition transform animate-fade-in">
-          <h3 class="text-2xl font-semibold mb-4 text-cyan-600">Plástico nos Oceanos</h3>
-          <p class="text-gray-700 leading-relaxed">Mais de 8 milhões de toneladas chegam ao mar todos os anos, causando poluição sem precedentes.</p>
+      <h2 class="text-4xl font-extrabold mb-12 title-glow">Assista e Reflita</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg video-parallax">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/1oDkfM0kUfc" title="Documentário sobre poluição marinha" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="p-8 bg-white rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition transform animate-fade-in">
-          <h3 class="text-2xl font-semibold mb-4 text-cyan-600">Animais em Risco</h3>
-          <p class="text-gray-700 leading-relaxed">Mais de 700 espécies já foram afetadas pelo plástico, colocando ecossistemas inteiros em perigo.</p>
+        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg video-parallax">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/9F0jJdsgzLM" title="Impacto do plástico nos oceanos" frameborder="0" allowfullscreen></iframe>
         </div>
-        <div class="p-8 bg-white rounded-2xl shadow-xl hover:scale-105 hover:shadow-2xl transition transform animate-fade-in">
-          <h3 class="text-2xl font-semibold mb-4 text-cyan-600">Microplásticos</h3>
-          <p class="text-gray-700 leading-relaxed">Partículas de plástico já foram encontradas em peixes, no sal e até na água que bebemos.</p>
+        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg video-parallax">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/3znTz5ArQxA" title="Soluções contra poluição plástica" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Rodapé com ondas -->
-  <footer class="relative bg-cyan-600 text-white text-center overflow-hidden">
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-    <div class="wave wave4"></div>
-    <p class="relative z-10 py-8 text-lg">&copy; 2025 Proteja os Oceanos 🌊 | Todos os direitos reservados.</p>
+  <!-- Galeria -->
+  <section id="gallery" class="py-24 bg-gray-900 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-12 title-glow">Galeria de Impacto</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <img src="assets/trash1.jpg" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500" alt="Poluição">
+        <img src="assets/trash2.jpg" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500" alt="Animais">
+        <img src="assets/trash3.jpg" class="rounded-xl shadow-lg hover:scale-105 transition-transform duration-500" alt="Mar">
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé com Ondas -->
+  <footer class="relative bg-gray-800 py-12 text-center text-gray-300">
+    <h2 class="text-2xl font-bold mb-4 title-glow">Juntos podemos salvar os oceanos 🌍</h2>
+    <p>© 2025 Projeto Oceanos — Feito com dedicação para conscientizar sobre a poluição marinha.</p>
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <svg class="relative block w-full h-24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1200 120">
+        <path d="M0,0V46.29c47.29,22.24,104.42,29,158,17.39C230.21,52.3,284,27,339,13.08c54.61-13.64,112.36-14.12,166,1.16,47.35,13.46,87.82,38.38,135,48.11,59.68,12.33,117.72-7.82,176-18.13,31.78-5.72,64.35-6.65,96,1.9,29.07,8,55.59,22.66,83,29.88V0Z" opacity=".25" fill="#00a2ff"></path>
+        <path d="M0,0V15.81C47.42,36.19,103.84,51.86,162,57.23c54.22,5,109.46-1.54,161-14.56,56.4-14.6,108.4-38.6,164-43.77,51.75-4.72,103.24,6.7,151,24.39,47.42,17.54,93.14,39.68,143,43.05,30.18,2.16,59.73-3.36,88-11.91V0Z" opacity=".5" fill="#0090e0"></path>
+        <path d="M0,0V5.63C50.22,21.88,106.79,35.36,164,41.19c55.4,5.61,112.18,2.87,166-7.46,59-11.37,112.67-32.12,171-36.61,30.92-2.25,61.92,.8,92,7.79,53.48,12.67,104.76,34.91,160,36.5,30.46,.85,59.74-4.36,88-13.2V0Z" fill="#007acc"></path>
+      </svg>
+    </div>
   </footer>
 
-  <!-- Botão Voltar ao Topo -->
-  <button id="backToTop" class="hidden fixed bottom-6 right-6 bg-cyan-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">⬆️</button>
+  <!-- Cursor customizado -->
+  <div id="custom-cursor"></div>
 
   <script src="script.js"></script>
 </body>
