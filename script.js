@@ -43,22 +43,27 @@ new Chart(ctx, {
         labels: ['Plástico nos oceanos', 'Reciclado', 'Outro lixo'],
         datasets: [{ data: [40,25,35], backgroundColor: ['#ef4444','#10b981','#3b82f6'] }]
     },
-    options: { responsive:true, plugins:{ legend:{ position:'bottom' } } }
+    options: { 
+        responsive:true, 
+        plugins:{ 
+            legend:{ position:'bottom', labels:{ color: '#000', font:{ size:14 } } } 
+        } 
+    }
 });
 
 // === LIGHT/DARK MODE ===
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('bg-blue-900');
-    document.body.classList.toggle('text-white');
-    themeBtn.textContent = document.body.classList.contains('bg-blue-900') ? 'Modo Claro' : 'Modo Escuro';
+    document.documentElement.classList.toggle('dark'); // Ativa Tailwind dark:
+    const isDark = document.documentElement.classList.contains('dark');
+    themeBtn.textContent = isDark ? 'Modo Claro' : 'Modo Escuro';
 });
 
 // === CONTAGEM REGRESSIVA ===
 const countdown = document.getElementById('countdown');
 const campaignEnd = new Date("Dec 31, 2025 23:59:59").getTime();
 
-setInterval(() => {
+const updateCountdown = () => {
     const now = new Date().getTime();
     const distance = campaignEnd - now;
 
@@ -73,4 +78,6 @@ setInterval(() => {
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}, 1000);
+};
+updateCountdown();
+setInterval(updateCountdown, 1000);
