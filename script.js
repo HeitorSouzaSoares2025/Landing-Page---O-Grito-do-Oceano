@@ -1,4 +1,4 @@
-console.log("🌊 Landing Page v2.0 carregada!");
+console.log("🌊 Landing Page com Parallax carregada!");
 
 // Scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -8,13 +8,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       behavior: "smooth"
     });
   });
-});
-
-// Dark mode toggle
-const toggle = document.getElementById("darkModeToggle");
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
 
 // Botão Voltar ao Topo
@@ -30,14 +23,12 @@ backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Scroll animations
-const animatedElements = document.querySelectorAll(".animate-slide-up, .animate-fade-in");
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-    }
+// Parallax de elementos (camadas que seguem o mouse)
+document.addEventListener("mousemove", e => {
+  document.querySelectorAll(".parallax-layer").forEach(layer => {
+    const speed = layer.getAttribute("data-speed");
+    const x = (window.innerWidth - e.pageX * speed) / 100;
+    const y = (window.innerHeight - e.pageY * speed) / 100;
+    layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
   });
-}, { threshold: 0.2 });
-
-animatedElements.forEach(el => observer.observe(el));
+});
