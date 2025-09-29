@@ -1,66 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>O Impacto do Plástico nos Mares</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>O Grito Do Oceano</title>
+    <meta name="description"
+        content="Entenda os impactos do plástico nos oceanos e como podemos agir para preservar a vida marinha." />
+    <meta name="author" content="Seu Nome" />
+    <meta name="theme-color" content="#005370" />
+
+    <link rel="preload"
+        href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80"
+        as="image" />
+
+    <link rel="icon" href="https://seusite.com/favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Consequências do Plástico nos Mares" />
+    <meta property="og:description"
+        content="Entenda os impactos do plástico nos oceanos e como podemos agir para preservar a vida marinha." />
+    <meta property="og:image"
+        content="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" />
+    <meta property="og:type" content="website" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <!-- Hero -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Oceano em Perigo 🌊</h1>
-      <p>Todos os anos, milhões de toneladas de plástico invadem os mares, ameaçando a vida marinha.</p>
-      <a href="#videos" class="btn">Assista Agora</a>
+    <header role="banner" id="page-header">
+        <h1 tabindex="0">O Grito do Oceano</h1>
+        <p>Descubra como o plástico está afetando a vida marinha e até mesmo o seu futuro!</p>
+    </header>
+
+    <img class="hero-img" src="https://i.gifer.com/TL80.gif" alt="Imagem de plásticos flutuando no mar" loading="eager"
+        fetchpriority="high" />
+
+    <main role="main" aria-labelledby="main-title" id="page-main">
+        <div class="counter" aria-live="polite" aria-atomic="true" aria-label="Toneladas de plástico no mar">
+            <span id="count-number">0</span> toneladas anuais
+        </div>
+
+        <section tabindex="0" aria-label="Seção: Poluição e Contaminação">
+            <h2 id="main-title">1. Poluição e Contaminação</h2>
+            <p>
+                A poluição e contaminação por plástico é um problema ambiental global com impactos significativos 
+                na saúde humana e nos ecossistemas. O descarte inadequado de plásticos, incluindo embalagens e produtos de uso único, leva à contaminação de solos, rios, oceanos e ao acúmulo de resíduos em aterros sanitários. A poluição plástica afeta a vida selvagem, a biodiversidade e pode liberar substâncias tóxicas na cadeia alimentar, causando riscos à saúde.
+            </p>
+        </section>
+
+        <section tabindex="0" aria-label="Seção: Ameaça à Vida Marinha">
+            <h2>2. Ameaça à Vida Marinha</h2>
+            <p>
+                A poluição por plástico representa uma séria ameaça à vida marinha, impactando ecossistemas, 
+                cadeias alimentares e a saúde de diversas espécies. O plástico, frequentemente confundido com alimento, é ingerido por animais, causando bloqueios digestivos, desnutrição e morte. Além disso, grandes pedaços de plástico podem enredar e ferir animais, enquanto microplásticos, partículas menores, podem acumular-se no corpo dos organismos e liberar substâncias tóxicas.
+            </p>
+        </section>
+
+        <section tabindex="0" aria-label="Seção: Impacto na Saúde Humana">
+            <h2>3. Impacto na Saúde Humana</h2>
+            <p>
+                Microplásticos entram na cadeia alimentar, contaminando frutos do mar consumidos por humanos, 
+                podendo causar problemas de saúde ainda pouco estudados, mas preocupantes. O plástico tem um impacto significativo na vida humana, tanto positivo quanto negativo. Embora tenha revolucionado diversos setores, oferecendo praticidade e durabilidade, sua produção e descarte inadequado causam graves problemas ambientais e de saúde.
+            </p>
+        </section>
+
+        <section tabindex="0" aria-label="Seção: Consequências Econômicas">
+            <h2>4. Consequências Econômicas</h2>
+            <p>
+                A poluição por plástico nos oceanos acarreta consequências econômicas significativas, afetando diversos 
+                setores como turismo, pesca e transporte. O custo global da poluição plástica nos oceanos pode chegar a US$ 2,5 trilhões anualmente.
+            </p>
+        </section>
+
+        <!-- Documentários -->
+        <section id="documentarios">
+            <h2>Documentários Recomendados</h2>
+            <p class="desc">Conheça documentários essenciais sobre os impactos do plástico nos oceanos e as soluções
+                para preservá-los.</p>
+            <div class="cards">
+                <a href="https://www.youtube.com/watch?v=RjLEK-kg24U" target="_blank" rel="noopener noreferrer">
+                    <h3>O Impacto do Plástico nos Oceanos</h3>
+                    <p>
+                        Você gosta de ver animais sofrendo? pois é exatamente isso o que você faz jogando lixos nos
+                        mares, causa dor e sofrimento a animais que não tem nada a ver com isso. E infelizmente muitos
+                        são levados a óbito por ingerirem plástico principalmente as tartarugas que as confundem com
+                        águas-vivas que são seus alimentos.
+                    </p>
+                    <span>Assistir agora ▶️</span>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=3b9W9f7GH_o" target="_blank" rel="noopener noreferrer">
+                    <h3>Vida Marinha e Poluição</h3>
+                    <p>
+                        Com o passar dos anos nós não percebemos, porém estamos criando um Oceano de Plástico e
+                        devastando a vida marinha e até as nossas próprias vidas e principalmente a vida das próximas
+                        gerações que irão pagar com lágrimas os nossos erros
+                    </p>
+                    <span>Assistir agora ▶️</span>
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=lMeeSYO_i7U" target="_blank" rel="noopener noreferrer">
+                    <h3>Soluções Sustentáveis</h3>
+                    <p>A Noruega achou uma solução sustetável para diminuir o despejo de plástico nos mares, uma
+                        iniciativa muito criativa e incrivelmente eficaz segundo pesquisas de orgãos monitoradores
+                    </p>
+                    <span>Assistir agora ▶️</span>
+                </a>
+            </div>
+        </section>
+
+        <button class="cta" aria-describedby="action-desc" id="actionBtn">Faça a Sua Parte</button>
+        <span id="action-desc" class="sr-only">Clique para abrir o modal de agradecimento</span>
+    </main>
+
+    <footer id="acao" role="contentinfo">
+        <p>Reduza o uso de plástico descartável, participe de limpezas de praias e apoie políticas ambientais. O futuro
+            dos oceanos depende de você!</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-bg" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+        aria-describedby="modalDesc" tabindex="-1">
+        <div class="modal" tabindex="0">
+            <h2 id="modalTitle">Obrigado por se importar!</h2>
+            <p id="modalDesc">Cada ação conta para proteger nossos mares e a vida marinha.</p>
+            <button id="closeModalBtn" aria-label="Fechar modal">Fechar</button>
+        </div>
     </div>
-  </header>
 
-  <!-- Sobre -->
-  <section class="about">
-    <div class="container">
-      <h2>O Problema</h2>
-      <p>O plástico demora centenas de anos para se decompor. Enquanto isso, tartarugas, golfinhos e aves marinhas sofrem com a poluição.</p>
-      <img src="https://images.unsplash.com/photo-1521207418485-99c705420785?auto=format&fit=crop&w=1200&q=80" alt="Tartaruga e plástico">
-    </div>
-  </section>
+    <!-- Voltar ao topo -->
+    <button id="backToTop" aria-label="Voltar ao topo" title="Voltar ao topo"></button>
 
-  <!-- GIF ilustrativo -->
-  <section class="gif-section">
-    <h2>Impacto Real</h2>
-    <img src="https://media.giphy.com/media/3ohs7KtxtlD0O2eQfu/giphy.gif" alt="Gif poluição oceânica">
-  </section>
-
-  <!-- Galeria -->
-  <section class="gallery">
-    <h2>Imagens que Falam por Si</h2>
-    <div class="grid">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Mar azul">
-      <img src="https://images.unsplash.com/photo-1603314585442-9f69b3a7be81?auto=format&fit=crop&w=800&q=80" alt="Garrafas no mar">
-      <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80" alt="Plástico poluindo">
-    </div>
-  </section>
-
-  <!-- Vídeos -->
-  <section id="videos" class="videos">
-    <h2>Assista e Reflita</h2>
-    <div class="video-grid">
-      <iframe src="https://www.youtube.com/embed/1VYnxP4nJQ4" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/1VYnxP4nJQ4" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/1VYnxP4nJQ4" frameborder="0" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>🌊 Feito para conscientizar sobre a preservação dos oceanos.</p>
-  </footer>
-
-  <!-- Cursor -->
-  <div id="custom-cursor"></div>
-
-  <!-- Script -->
-  <script src="script.js"></script>
+    <!-- JS -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>

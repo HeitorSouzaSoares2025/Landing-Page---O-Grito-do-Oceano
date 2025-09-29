@@ -1,0 +1,431 @@
+/* =============================
+   RESET BÁSICO
+   Remove margens/paddings padrão e define fonte
+============================= */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Inclui bordas e padding no cálculo do tamanho do elemento */
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    /* Fonte global */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Rolagem suave ao clicar em âncoras ou no botão "topo" */
+    font-size: 16px;
+    /* Base para rem */
+}
+
+body {
+    background: linear-gradient(to bottom, #0077a3, #004358);
+    /* Fundo com gradiente azul → verde-escuro */
+    color: #f5f5f5;
+    /* Cor de texto padrão */
+    min-height: 100vh;
+    /* Garante que o body ocupe a altura toda da janela */
+    display: flex;
+    /* Permite layout em coluna (header, main, footer) */
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza o conteúdo horizontalmente */
+    padding: 2rem 1rem;
+    text-align: center;
+    overflow-x: hidden;
+    /* Evita rolagem lateral */
+    line-height: 1.6;
+    /* Altura das linhas */
+}
+
+
+/* =============================
+   HEADER
+============================= */
+header {
+    max-width: 900px;
+    /* Limite de largura */
+    margin-bottom: 2rem;
+    /* Espaço inferior */
+}
+
+header h1 {
+    font-size: 2.75rem;
+    font-weight: 900;
+    /* Negrito forte */
+    color: #ffde59;
+    /* Amarelo vivo */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+    /* Sombra para contraste */
+}
+
+header p {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #f0f0f0cc;
+    /* Branco levemente translúcido */
+    margin-top: .25rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+    /* Sombra mais suave */
+}
+
+
+/* =============================
+   MAIN (CONTEÚDO PRINCIPAL)
+============================= */
+main {
+    max-width: 900px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Fundo semi-transparente para contraste */
+    border-radius: 18px;
+    /* Bordas arredondadas */
+    padding: 2.5rem 3rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.75);
+    /* Sombra para profundidade */
+    width: 100%;
+}
+
+/* Quando o modal está ativo, esconde o main do leitor de tela e aplica blur */
+main[aria-hidden="true"] {
+    filter: blur(2px);
+    pointer-events: none;
+    /* Desabilita interações */
+}
+
+
+/* =============================
+   SEÇÕES (efeito de aparição ao rolar)
+============================= */
+section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    /* Inicialmente invisível */
+    transform: translateY(40px);
+    /* Deslocado para baixo */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    /* Transição suave */
+}
+
+section.visible {
+    opacity: 1;
+    /* Fica visível */
+    transform: translateY(0);
+    /* Volta à posição normal */
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: .8rem;
+    color: #ffd959;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+section p {
+    font-size: 1.15rem;
+    color: #e7e7e7cc;
+}
+
+
+/* =============================
+   IMAGEM PRINCIPAL (HERO)
+============================= */
+.hero-img {
+    max-width: 100%;
+    /* Responsiva */
+    border-radius: 18px;
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+    /* Sombra forte */
+}
+
+
+/* =============================
+   CONTADOR
+============================= */
+.counter {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff17e;
+    /* Amarelo vibrante */
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+
+
+/* =============================
+   BOTÃO DE AÇÃO (CTA)
+============================= */
+.cta {
+    display: inline-block;
+    background: #ffd959;
+    color: #003049;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    /* Botão oval */
+    font-weight: 800;
+    font-size: 1.3rem;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(255, 217, 77, 0.75);
+    cursor: pointer;
+    border: none;
+}
+
+.cta:hover,
+.cta:focus-visible {
+    background: #fff48d;
+    /* Cor mais clara no hover */
+    transform: scale(1.05);
+    /* Leve zoom ao passar mouse ou focar */
+}
+
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+    margin-top: auto;
+    /* Empurra para o fim da página */
+    padding: 1.2rem 1rem;
+    font-size: 1.05rem;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    color: #eee;
+    max-width: 900px;
+}
+
+
+/* =============================
+   SEÇÃO DE DOCUMENTÁRIOS
+============================= */
+#documentarios {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #0077a3, #004358);
+    /* Fundo em gradiente */
+    border-radius: 12px;
+}
+
+#documentarios h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#documentarios .desc {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1rem;
+    color: #cce8f0;
+    /* Azul claro */
+}
+
+#documentarios .cards {
+    display: flex;
+    flex-wrap: wrap;
+    /* Quebra linha em telas menores */
+    justify-content: center;
+    gap: 20px;
+}
+
+#documentarios a {
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    padding: 20px;
+    width: 280px;
+    text-decoration: none;
+    color: #e0f7fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+#documentarios a:hover {
+    transform: translateY(-8px);
+    /* Efeito de elevação */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    color: #a0d8f7;
+    /* Azul mais claro no hover */
+}
+
+#documentarios a h3 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+#documentarios a p {
+    font-size: 0.95rem;
+    flex-grow: 1;
+    /* Ocupa o espaço disponível */
+    color: #cce8f0;
+}
+
+#documentarios a span {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #b3d6e8;
+}
+
+
+/* =============================
+   MODAL
+============================= */
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    /* Ocupa toda a tela */
+    background: rgba(0, 0, 0, 0.85);
+    /* Fundo escurecido */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    /* Escondido por padrão */
+    opacity: 0;
+    transition: opacity .5s;
+    z-index: 1000;
+    /* Sobrepõe outros elementos */
+}
+
+.modal-bg.active {
+    visibility: visible;
+    /* Mostra ao adicionar classe */
+    opacity: 1;
+}
+
+.modal {
+    background: #002838;
+    color: #ffe87a;
+    padding: 2.5rem 3.5rem;
+    border-radius: 22px;
+    max-width: 460px;
+    text-align: center;
+    box-shadow: 0 0 40px #ffe87a;
+    /* Destaque */
+    transform: scale(0.9);
+    /* Ligeiramente reduzido inicialmente */
+    transition: transform .35s;
+}
+
+.modal-bg.active .modal {
+    transform: scale(1);
+    /* Cresce suavemente ao abrir */
+}
+
+.modal h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.modal p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.modal button {
+    background: #ffe87a;
+    border: none;
+    padding: 0.9rem 2.2rem;
+    font-weight: 900;
+    border-radius: 50px;
+    color: #002838;
+    cursor: pointer;
+}
+
+
+/* =============================
+   BOTÃO VOLTAR AO TOPO
+============================= */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background: #ffe87a;
+    color: #002838;
+    border: none;
+    padding: .8rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.3rem;
+    opacity: 0;
+    /* Invisível por padrão */
+    pointer-events: none;
+    /* Não clicável quando invisível */
+    transition: opacity .35s;
+    z-index: 1100;
+    /* Fica acima do modal */
+}
+
+#backToTop.visible {
+    opacity: 1;
+    /* Visível ao rolar a página */
+    pointer-events: auto;
+}
+
+#backToTop::after {
+    content: "⬆";
+    /* Ícone de seta */
+    font-size: 1.5rem;
+}
+
+
+/* =============================
+   ELEMENTOS APENAS PARA LEITORES DE TELA
+============================= */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    /* Oculta visualmente, mas mantém para acessibilidade */
+}
+
+
+/* =============================
+   RESPONSIVIDADE
+============================= */
+@media(max-width:900px) {
+    #documentarios .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #documentarios a {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media(max-width:600px) {
+    html {
+        font-size: 15px;
+        /* Ajusta tamanho da fonte para telas pequenas */
+    }
+
+    header h1 {
+        font-size: 2.25rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+    }
+
+    .cta {
+        font-size: 1.1rem;
+        padding: .75rem 2rem;
+    }
+
+    .modal {
+        padding: 2rem 2.2rem;
+        max-width: 90%;
+        /* Modal mais estreito em telas pequenas */
+    }
+}
